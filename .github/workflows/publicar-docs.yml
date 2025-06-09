@@ -26,7 +26,7 @@ jobs:
       # Passo 2: Ação principal que sincroniza com o GitBook
       - name: Publicar no GitBook
         # Utiliza uma ação pronta e oficial do GitBook
-        uses: gitbook/actions/publish@v2
+        uses: gitbook/publish-action@v1
         with:
           # Usa o token que guardamos de forma segura nos "Secrets"
           token: ${{ secrets.GITBOOK_TOKEN }}
