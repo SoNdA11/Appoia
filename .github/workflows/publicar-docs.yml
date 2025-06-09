@@ -1,0 +1,32 @@
+# Nome do workflow que aparecerá na aba "Actions" do GitHub
+name: Publicar Documentação no GitBook
+
+# Gatilho: Define quando esta automação deve rodar
+on:
+  # Roda toda vez que houver um push na branch 'main'
+  push:
+    branches:
+      - main
+    # Roda apenas se houver alterações na pasta 'docs' ou neste próprio arquivo
+    paths:
+      - 'docs/**'
+      - '.github/workflows/publicar-docs.yml'
+
+# Tarefas: Define o que a automação vai fazer
+jobs:
+  publish:
+    # O tipo de máquina virtual que irá rodar o script
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Clona o seu repositório para a máquina virtual
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      # Passo 2: Ação principal que sincroniza com o GitBook
+      - name: Publicar no GitBook
+        # Utiliza uma ação pronta e oficial do GitBook
+        uses: gitbook/actions/publish@v2
+        with:
+          # Usa o token que guardamos de forma segura nos "Secrets"
+          token: ${{ secrets.GITBOOK_TOKEN }}
