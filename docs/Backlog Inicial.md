@@ -1,7 +1,13 @@
 # Documentação Backlog Inicial - Appoia
 
-**Versão:** 1.0
+Este documento representa o Backlog do Produto para o projeto Appoia. Ele funciona como uma lista viva e priorizada de todas as funcionalidades, requisitos e melhorias planejadas para o aplicativo, servindo como a única fonte de verdade para o trabalho do time de desenvolvimento.
+Cada item na tabela abaixo é uma História de Usuário, uma técnica ágil para descrever um requisito do ponto de vista de quem o deseja. A estrutura "Como um [ator], quero [fazer algo], para que [objetivo]" nos ajuda a manter o foco no valor que estamos entregando aos usuários finais, sejam eles pais/cuidadores ou crianças.
+As colunas da tabela são definidas como:
 
+ID: Um identificador único para a história.
+História do Usuário: A descrição da funcionalidade no formato ágil.
+Prioridade: Indica a ordem em que as histórias devem ser desenvolvidas (Alta, Média, Baixa), garantindo que as funcionalidades mais importantes sejam construídas primeiro.
+Critérios de Aceitação: Define as condições exatas que precisam ser atendidas para que a história seja considerada "Pronta". Eles servem como um guia para o desenvolvimento e são a base para os testes.
 | ID  |                                                                                   História do Usuário                                                                                    | Prioridade |                                                                                                               Critérios de Aceitação                                                                                                                |
 | --- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| ---------- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | 1   |                                                              Como pai/cuidador, quero criar um conta para acessar o sistema                                                              | Alta       |                                                                                            O sistema deve permitir o cadastro com nome, e-mail e senha.                                                                                             |
