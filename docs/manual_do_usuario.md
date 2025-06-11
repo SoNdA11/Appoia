@@ -56,11 +56,3 @@ Visualizando Tarefas: Na seção "Minhas Tarefas", você encontrará duas listas
 Eventos e Calendário: Em "Meus Eventos", você pode ver todos os seus compromissos futuros. No "Calendário", você tem uma visão completa de toda a sua agenda de tarefas e eventos.
 
     Minhas Rotas: Seus pais criaram uma rota para você? Acesse "Minhas Rotas" para ver o caminho no mapa e não se perder!
-
-Previous
-Backlog Inicial
-Next
-Requisitos do Sistema
-Paulo Sérgio
-Last modified 3h ago
-On this page
