@@ -11,3 +11,4 @@
 * [Requisitos do Sistema](Documentos%20de%20Requisitos.md)
 * [Backlog do Produto](Backlog%20Inicial.md)
 * [Modelo de Dados](modelo_de_dados.md)
+* [Casos de Uso](casos_de_uso.md)

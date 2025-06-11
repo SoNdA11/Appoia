@@ -1,4 +1,4 @@
-# Documentação Backlog Inicial - Appoia
+# Documentação Backlog Inicial
 
 Este documento representa o Backlog do Produto para o projeto Appoia. Ele funciona como uma lista viva e priorizada de todas as funcionalidades, requisitos e melhorias planejadas para o aplicativo, servindo como a única fonte de verdade para o trabalho do time de desenvolvimento.
 Cada item na tabela abaixo é uma História de Usuário, uma técnica ágil para descrever um requisito do ponto de vista de quem o deseja. A estrutura "Como um [ator], quero [fazer algo], para que [objetivo]" nos ajuda a manter o foco no valor que estamos entregando aos usuários finais, sejam eles pais/cuidadores ou crianças.

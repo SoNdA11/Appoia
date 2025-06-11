@@ -1,4 +1,4 @@
-# Documentação Visão de Produto - Appoia
+# Documentação Visão de Produto
 
 **Versão:** 1.0
 

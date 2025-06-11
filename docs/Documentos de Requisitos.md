@@ -1,6 +1,4 @@
-# Documento de Requisitos - Appoia
-
-**Versão:** 1.0
+# Documento de Requisitos
 
 ## 1. Introdução
 
