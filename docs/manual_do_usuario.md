@@ -1,4 +1,4 @@
-# Manual do Usuário - Appoia
+# Manual do Usuário
 
 ## 1. Introdução
 
