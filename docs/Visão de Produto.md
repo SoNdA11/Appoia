@@ -1,7 +1,5 @@
 # Documentação Visão de Produto
 
-**Versão:** 1.0
-
 # 1. Introdução
 
 O **Appoia** é um aplicativo mobile desenvolvido para ajudar pais e cuidadores de crianças, especialmente aquelas com idades entre 5 e 12 anos, a gerenciar tarefas, eventos e rotinas diárias de forma simples e divertida. Seu foco principal é facilitar o acompanhamento das atividades das crianças e tornar o cumprimento dessas tarefas mais motivador por meio de um sistema de recompensas baseado em pontos. O Appoia foi idealizado para reduzir o estresse e as crises causadas por mudanças inesperadas na rotina, com especial atenção a famílias que convivem com crianças autistas.
