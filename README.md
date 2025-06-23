@@ -42,3 +42,9 @@ O projeto está organizado da seguinte forma para facilitar a navegação e a av
     /docs: Contém toda a documentação do projeto, como o Documento de Visão, Requisitos, Casos de Uso e Diagramas UML.
     /src: Contém todo o código-fonte da aplicação.
     /tests: Contém os testes automatizados, separados por tipo (unitários, integração e aceitação).
+
+## Documentação Completa
+
+A documentação detalhada do projeto, incluindo requisitos, diagramas e guias de uso, está disponível no GitBook no link abaixo:
+
+https://paulos-organization-26.gitbook.io/appoia
