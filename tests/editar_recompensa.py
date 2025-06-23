@@ -6,52 +6,47 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-service = Service(executable_path="geckodriver")
-driver = webdriver.Firefox()
+def iniciar_driver():
+    service = Service(executable_path="geckodriver")
+    return webdriver.Firefox(service=service)
 
-try:
-    
+def login(driver):
     driver.get("https://appoia-app.glide.page")
-
-    WebDriverWait(driver, 15).until(
-        EC.presence_of_all_elements_located((By.CLASS_NAME, "is-signin"))
-    )
+    WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "is-signin")))
     
     campo_email = driver.find_element(By.CLASS_NAME, "is-signin")
     campo_email.clear()
     campo_email.send_keys("appoiaapp@gmail.com" + Keys.ENTER)
 
-    WebDriverWait(driver, 20).until(
-        EC.presence_of_all_elements_located((By.CLASS_NAME, "is-signin"))
-    )
+    WebDriverWait(driver, 20).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "is-signin")))
 
     codigo = input("Código recebido no email: ")
-
     campo_codigo = driver.find_element(By.CLASS_NAME, "is-signin")
     campo_codigo.clear()
     campo_codigo.send_keys(codigo + Keys.ENTER)
 
+def navegar_para_recompensas(driver):
     WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.XPATH, "//span[contains(text(), 'Definir Recompensas')]"))
     )
-
     botao_recompensa = driver.find_element(By.XPATH, "//span[contains(text(), 'Definir Recompensas')]/ancestor::button")
     botao_recompensa.click()
 
+def abrir_primeira_recompensa(driver):
     WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='collection-item-0']"))
     )
-    
     detalhes_recompensa = driver.find_element(By.CSS_SELECTOR, "[data-testid='collection-item-0']")
     detalhes_recompensa.click()
 
+def abrir_editor_recompensa(driver):
     WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "[aria-label='Editar']"))
     )
-
     editar_recompensa = driver.find_element(By.CSS_SELECTOR, "[aria-label='Editar']")
     editar_recompensa.click()
 
+def preencher_formulario(driver):
     WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='wf-input']"))
     )
@@ -65,11 +60,10 @@ try:
             break
         else:
             print("Valor inválido! Digite apenas números. ")
-        
-    disponibilidade = input("Insira a disponibilidade (Disponível / Indisponível?: ").lower()
+    
+    disponibilidade = input("Insira a disponibilidade (Disponível / Indisponível?): ").lower()
 
     campos = driver.find_elements(By.CSS_SELECTOR, "[data-testid='wf-input']")
-    
     campos[0].clear()
     campos[0].send_keys(titulo)
 
@@ -78,7 +72,7 @@ try:
 
     campos[2].clear()
     campos[2].send_keys(custo)
-    
+
     if disponibilidade == "disponível":
         opcao = driver.find_element(By.XPATH, "//li[contains(text(), 'Disponível')]")
         opcao.click()
@@ -86,25 +80,35 @@ try:
         opcao = driver.find_element(By.XPATH, "//li[contains(text(), 'Não Disponível')]")
         opcao.click()
     else:
-        print("Opção inválida. Nenhuma alteração foi realizada")
-        opcao = None
+        print("Opção inválida. Nenhuma alteração foi realizada.")
 
+def salvar_e_voltar(driver):
     WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.XPATH, "//button[.//div[contains(text(), 'Submit')]]"))
     )
-
     salvar = driver.find_element(By.XPATH, "//button[.//div[contains(text(), 'Submit')]]")
     driver.execute_script("arguments[0].click();", salvar)
-    
+
     WebDriverWait(driver, 10).until(
-    EC.invisibility_of_element_located((By.CSS_SELECTOR, ".wire-field___StyledDiv-sc-1nuhqre-2.iBNbMO"))
+        EC.invisibility_of_element_located((By.CSS_SELECTOR, ".wire-field___StyledDiv-sc-1nuhqre-2.iBNbMO"))
     )
-    
+
     voltar = driver.find_element(By.CSS_SELECTOR, "[aria-label='Voltar']")
     voltar.click()
 
+def main():
+    driver = iniciar_driver()
+    try:
+        login(driver)
+        navegar_para_recompensas(driver)
+        abrir_primeira_recompensa(driver)
+        abrir_editor_recompensa(driver)
+        preencher_formulario(driver)
+        salvar_e_voltar(driver)
 
-    time.sleep(20)
+        time.sleep(20)  # Só pra você ver o resultado antes de fechar
+    finally:
+        driver.quit()
 
-finally:
-    driver.quit()
+if __name__ == "__main__":
+    main()
